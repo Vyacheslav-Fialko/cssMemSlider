@@ -1,0 +1,48 @@
+:root{
+  font-size: calc(1vh + 0.5rem);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header */
+.header{
+  width: 100%;
+  padding: 1.5em;
+  background-color: #d2691e;
+}
+
+.title{
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #faebd7;
+}
+
+/* footer */
+.footer{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 1em 2em;
+  background-color: #2f4f4f;
+}
+
+.date,
+.link{
+  font-size: 0.8rem;
+  color: #faebd7;
+}
+
+.link{
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s linear;
+}
+
+.link:hover{
+  transform: scale(1.1);
+}
