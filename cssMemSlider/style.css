@@ -1,4 +1,4 @@
-:root{
+:root {
   font-size: calc(1vh + 0.6rem);
 }
 
@@ -86,24 +86,31 @@ main {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 0.3rem;
   margin-left: auto;
   order: 3;
 }
 
 .slider__dot {
   display: block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid transparent;
+  box-sizing: content-box;
+  width: 0.8rem;
+  height: 0.8rem;
+  padding: 0.5rem;
   border-radius: 50px;
   background-color: #ffffff;
+  background-clip: content-box;
   cursor: pointer;
   transition: all 0.2s linear;
 }
 
 .slider__dot:hover {
-  border-color: blueviolet;
+  background-color: darkslateblue;
+}
+
+.slider__dot:active {
+  transform: scale(0.8);
+  background-color: #d2691e;
 }
 
 .slider__text_wrap {
@@ -139,8 +146,22 @@ main {
 #dot2:checked ~ .sliders__control .slider__dot:nth-child(2),
 #dot3:checked ~ .sliders__control .slider__dot:nth-child(3),
 #dot4:checked ~ .sliders__control .slider__dot:nth-child(4) {
-  border-color: teal;
-  background-color: transparent;
+  background-color: #7fff00;
+  cursor: default;
+}
+
+#dot1:checked ~ .sliders__control .slider__dot:nth-child(1):hover,
+#dot2:checked ~ .sliders__control .slider__dot:nth-child(2):hover,
+#dot3:checked ~ .sliders__control .slider__dot:nth-child(3):hover,
+#dot4:checked ~ .sliders__control .slider__dot:nth-child(4):hover {
+  background-color: #7fff00;
+}
+
+#dot1:checked ~ .sliders__control .slider__dot:nth-child(1):active,
+#dot2:checked ~ .sliders__control .slider__dot:nth-child(2):active,
+#dot3:checked ~ .sliders__control .slider__dot:nth-child(3):active,
+#dot4:checked ~ .sliders__control .slider__dot:nth-child(4):active {
+  transform: scale(1);
 }
 
 /* footer */
@@ -169,7 +190,6 @@ main {
 }
 
 @media (max-width: 420px) {
-
   .sliders__control {
     width: 100%;
     justify-content: center;
